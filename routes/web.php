@@ -16,6 +16,11 @@ use Inertia\Inertia;
 */
 
 Route::get('/', [App\Http\Controllers\UI\PagesController::class, 'index'])->name('home');
+Route::get('/about', [App\Http\Controllers\UI\PagesController::class, 'about'])->name('about');
+Route::get('/approach', [App\Http\Controllers\UI\PagesController::class, 'approach'])->name('approach');
+Route::get('/get-in-touch', [App\Http\Controllers\UI\PagesController::class, 'getInTouch'])->name('get-in-touch');
+Route::get('/where-am-i', [App\Http\Controllers\UI\PagesController::class, 'whereAmI'])->name('where-am-i');
+Route::get('/therapeutic-space', [App\Http\Controllers\UI\PagesController::class, 'therapeuticSpace'])->name('therapeutic-space');
 
 //Route::get('/', function () {
 //    return Inertia::render('Welcome', [

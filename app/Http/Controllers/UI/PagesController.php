@@ -11,4 +11,29 @@ class PagesController extends Controller
     {
         return Inertia::render('Home');
     }
+
+    public function about()
+    {
+        return Inertia::render('About');
+    }
+
+    public function approach()
+    {
+        return Inertia::render('Approach');
+    }
+
+    public function getInTouch()
+    {
+        return Inertia::render('GetInTouch');
+    }
+
+    public function whereAmI()
+    {
+        return Inertia::render('WhereAmI');
+    }
+
+    public function therapeuticSpace()
+    {
+        return Inertia::render('TherapeuticSpace');
+    }
 }
