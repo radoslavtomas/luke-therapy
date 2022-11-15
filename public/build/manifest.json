@@ -1,0 +1,191 @@
+{
+  "resources/js/app.js": {
+    "file": "assets/app.ceeb7ff0.js",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/Pages/About.vue",
+      "resources/js/Pages/Approach.vue",
+      "resources/js/Pages/Auth/ConfirmPassword.vue",
+      "resources/js/Pages/Auth/ForgotPassword.vue",
+      "resources/js/Pages/Auth/Login.vue",
+      "resources/js/Pages/Auth/Register.vue",
+      "resources/js/Pages/Auth/ResetPassword.vue",
+      "resources/js/Pages/Auth/VerifyEmail.vue",
+      "resources/js/Pages/Dashboard.vue",
+      "resources/js/Pages/GetInTouch.vue",
+      "resources/js/Pages/Home.vue",
+      "resources/js/Pages/TherapeuticSpace.vue",
+      "resources/js/Pages/Welcome.vue",
+      "resources/js/Pages/WhereAmI.vue"
+    ],
+    "css": [
+      "assets/app.73fc6df1.css"
+    ]
+  },
+  "resources/js/Pages/About.vue": {
+    "file": "assets/About.056383ba.js",
+    "src": "resources/js/Pages/About.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_MainLayout.e17077a0.js"
+    ]
+  },
+  "_MainLayout.e17077a0.js": {
+    "file": "assets/MainLayout.e17077a0.js",
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/Pages/Approach.vue": {
+    "file": "assets/Approach.2f331b41.js",
+    "src": "resources/js/Pages/Approach.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_MainLayout.e17077a0.js"
+    ]
+  },
+  "resources/js/Pages/Auth/ConfirmPassword.vue": {
+    "file": "assets/ConfirmPassword.8ea97f33.js",
+    "src": "resources/js/Pages/Auth/ConfirmPassword.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_PrimaryButton.22a3e8ab.js",
+      "_TextInput.6c6009ff.js",
+      "_ApplicationLogo.8d43b5b7.js"
+    ]
+  },
+  "_PrimaryButton.22a3e8ab.js": {
+    "file": "assets/PrimaryButton.22a3e8ab.js",
+    "imports": [
+      "_ApplicationLogo.8d43b5b7.js",
+      "resources/js/app.js"
+    ]
+  },
+  "_TextInput.6c6009ff.js": {
+    "file": "assets/TextInput.6c6009ff.js",
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "_ApplicationLogo.8d43b5b7.js": {
+    "file": "assets/ApplicationLogo.8d43b5b7.js",
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/Pages/Auth/ForgotPassword.vue": {
+    "file": "assets/ForgotPassword.616e5385.js",
+    "src": "resources/js/Pages/Auth/ForgotPassword.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_PrimaryButton.22a3e8ab.js",
+      "_TextInput.6c6009ff.js",
+      "_ApplicationLogo.8d43b5b7.js"
+    ]
+  },
+  "resources/js/Pages/Auth/Login.vue": {
+    "file": "assets/Login.9de85b7f.js",
+    "src": "resources/js/Pages/Auth/Login.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_PrimaryButton.22a3e8ab.js",
+      "_TextInput.6c6009ff.js",
+      "_ApplicationLogo.8d43b5b7.js"
+    ]
+  },
+  "resources/js/Pages/Auth/Register.vue": {
+    "file": "assets/Register.df3d25aa.js",
+    "src": "resources/js/Pages/Auth/Register.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_PrimaryButton.22a3e8ab.js",
+      "_TextInput.6c6009ff.js",
+      "_ApplicationLogo.8d43b5b7.js"
+    ]
+  },
+  "resources/js/Pages/Auth/ResetPassword.vue": {
+    "file": "assets/ResetPassword.ae778703.js",
+    "src": "resources/js/Pages/Auth/ResetPassword.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_PrimaryButton.22a3e8ab.js",
+      "_TextInput.6c6009ff.js",
+      "_ApplicationLogo.8d43b5b7.js"
+    ]
+  },
+  "resources/js/Pages/Auth/VerifyEmail.vue": {
+    "file": "assets/VerifyEmail.61418ea8.js",
+    "src": "resources/js/Pages/Auth/VerifyEmail.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_PrimaryButton.22a3e8ab.js",
+      "_ApplicationLogo.8d43b5b7.js"
+    ]
+  },
+  "resources/js/Pages/Dashboard.vue": {
+    "file": "assets/Dashboard.5fc78afd.js",
+    "src": "resources/js/Pages/Dashboard.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_ApplicationLogo.8d43b5b7.js",
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/Pages/GetInTouch.vue": {
+    "file": "assets/GetInTouch.1c707318.js",
+    "src": "resources/js/Pages/GetInTouch.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_MainLayout.e17077a0.js"
+    ]
+  },
+  "resources/js/Pages/Home.vue": {
+    "file": "assets/Home.6766b67a.js",
+    "src": "resources/js/Pages/Home.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_MainLayout.e17077a0.js"
+    ]
+  },
+  "resources/js/Pages/TherapeuticSpace.vue": {
+    "file": "assets/TherapeuticSpace.b2d2f698.js",
+    "src": "resources/js/Pages/TherapeuticSpace.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_MainLayout.e17077a0.js"
+    ]
+  },
+  "resources/js/Pages/Welcome.vue": {
+    "file": "assets/Welcome.2cb287b3.js",
+    "src": "resources/js/Pages/Welcome.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/Pages/WhereAmI.vue": {
+    "file": "assets/WhereAmI.54480b89.js",
+    "src": "resources/js/Pages/WhereAmI.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_MainLayout.e17077a0.js"
+    ]
+  },
+  "resources/js/app.css": {
+    "file": "assets/app.73fc6df1.css",
+    "src": "resources/js/app.css"
+  }
+}
