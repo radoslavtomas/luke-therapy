@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Navigation;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 use Tightenco\Ziggy\Ziggy;
@@ -43,6 +44,13 @@ class HandleInertiaRequests extends Middleware
                     'location' => $request->url(),
                 ]);
             },
+            'navigation' => function () {
+                return $this->getNavigationItems();
+            }
         ]);
+    }
+
+    private function getNavigationItems() {
+        return Navigation::orderBy('position')->get();
     }
 }
