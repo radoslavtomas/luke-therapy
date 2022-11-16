@@ -19,4 +19,9 @@ class Navigation extends Model
         'route',
         'position',
     ];
+
+    public function page()
+    {
+        return $this->belongsTo(Page::class);
+    }
 }

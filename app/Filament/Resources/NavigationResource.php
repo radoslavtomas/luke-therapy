@@ -27,6 +27,9 @@ class NavigationResource extends Resource
                     ->required(),
                 Forms\Components\TextInput::make('route')
                     ->required(),
+                Forms\Components\Select::make('page_id')
+                    ->relationship('page', 'name')
+                    ->required(),
                 Forms\Components\TextInput::make('position')
                     ->required(),
             ])->columns(1);

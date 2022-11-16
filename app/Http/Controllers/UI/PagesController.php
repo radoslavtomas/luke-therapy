@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\UI;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Request;
 use Inertia\Inertia;
 
 class PagesController extends Controller
@@ -10,6 +11,11 @@ class PagesController extends Controller
     public function index()
     {
         return Inertia::render('Home');
+    }
+
+    public function page(Request $request, $any)
+    {
+        dd($any);
     }
 
     public function about()
