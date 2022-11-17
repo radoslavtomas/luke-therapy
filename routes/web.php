@@ -16,14 +16,17 @@ use Inertia\Inertia;
 */
 
 Route::get('/', [App\Http\Controllers\UI\PagesController::class, 'index'])->name('home');
+Route::get('/where-am-i', [App\Http\Controllers\UI\PagesController::class, 'contact'])->name('contact');
+Route::get('/get-in-touch', [App\Http\Controllers\UI\PagesController::class, 'getInTouch'])->name('getInTouch');
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-require __DIR__.'/auth.php';
+//Route::get('/dashboard', function () {
+//    return Inertia::render('Dashboard');
+//})->middleware(['auth', 'verified'])->name('dashboard');
+//
+//require __DIR__.'/auth.php';
 
 Route::get('/{any}', [App\Http\Controllers\UI\PagesController::class, 'page']);
+//Route::get('/{any}', [App\Http\Controllers\UI\PagesController::class, 'page'])->where('any', '.*');
 
 //Route::get('/about', [App\Http\Controllers\UI\PagesController::class, 'about'])->name('about');
 //Route::get('/approach', [App\Http\Controllers\UI\PagesController::class, 'approach'])->name('approach');

@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use App\Models\Navigation;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 use Tightenco\Ziggy\Ziggy;
@@ -46,6 +47,9 @@ class HandleInertiaRequests extends Middleware
             },
             'navigation' => function () {
                 return $this->getNavigationItems();
+            },
+            'settings' => function () {
+                return Setting::first();
             }
         ]);
     }

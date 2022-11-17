@@ -1,9 +1,8 @@
 <template>
     <main-layout>
         <Head :title="page.title" />
-        <section class="mb-4 h-48 bg-gray-100 flex justify-center items-center flex-col">
-            <h1 class="text-2xl font-bold mb-2">{{ settings.page_title }}</h1>
-            <h4 class="text-sm">{{ settings.page_subtitle }}</h4>
+        <section class="mb-4">
+            <h1 class="text-2xl font-bold">{{ page.name }}</h1>
         </section>
         <section v-html="page.body"></section>
     </main-layout>
@@ -12,9 +11,9 @@
 <script setup>
 import {Head, Link, usePage} from '@inertiajs/inertia-vue3';
 import MainLayout from '../Layouts/MainLayout.vue'
-import {computed} from "vue";
+import {computed, onMounted} from "vue";
 
 const page = computed(() => usePage().props.value.page);
-const settings = computed(() => usePage().props.value.settings);
 
+onMounted(() => console.log(page.value))
 </script>

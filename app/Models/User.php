@@ -13,6 +13,16 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
+     * Can access Filament
+     *
+     * @return bool
+     */
+    public function canAccessFilament(): bool
+    {
+        return true;
+    }
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>

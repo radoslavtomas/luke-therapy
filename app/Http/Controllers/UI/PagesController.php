@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\UI;
 
 use App\Http\Controllers\Controller;
+use App\Models\Navigation;
+use App\Models\Page;
 use Illuminate\Support\Facades\Request;
 use Inertia\Inertia;
 
@@ -10,36 +12,45 @@ class PagesController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Home');
+        $page = Page::where('name', 'Home')->firstOrFail();
+
+        return Inertia::render('Home', [
+            'page' => [
+                'name' => $page['name'],
+                'title' => $page['title'],
+                'body' => $page['body']
+            ]
+        ]);
     }
 
-    public function page(Request $request, $any)
+    public function contact()
     {
-        dd($any);
-    }
-
-    public function about()
-    {
-        return Inertia::render('About');
-    }
-
-    public function approach()
-    {
-        return Inertia::render('Approach');
+        return Inertia::render('Contact');
     }
 
     public function getInTouch()
     {
-        return Inertia::render('GetInTouch');
+        $page = Page::where('name', 'Get in touch')->firstOrFail();
+
+        return Inertia::render('GetInTouch', [
+            'page' => [
+                'name' => $page['name'],
+                'title' => $page['title'],
+                'body' => $page['body']
+            ]
+        ]);
     }
 
-    public function whereAmI()
+    public function page(Request $request, $any)
     {
-        return Inertia::render('WhereAmI');
-    }
+        $page = Navigation::with('page')->where('route', $any)->firstOrFail();
 
-    public function therapeuticSpace()
-    {
-        return Inertia::render('TherapeuticSpace');
+        return Inertia::render('PageView', [
+            'page' => [
+                'name' => $page['name'],
+                'title' => $page['page']['title'],
+                'body' => $page['page']['body']
+            ]
+        ]);
     }
 }

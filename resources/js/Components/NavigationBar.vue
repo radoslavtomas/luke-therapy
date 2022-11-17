@@ -15,8 +15,8 @@
                 <Link :href="route('home')" class="flex items-center justify-end sm:justify-start h-10">
                     <img class="order-2 lg:order-1 h-full w-auto mt-1 hidden sm:block" src="/assets/img/logo.png" alt="Logo">
                     <div class="order-1 lg:order-2 mr-2 lg:mr-0 lg:ml-2 text-right sm:text-left">
-                        <h3 class="text-xl font-bold">Luke Stevenson</h3>
-                        <h6 class="text-xs leading-tight">Psychotherapy and Counselling</h6>
+                        <h3 class="text-xl font-bold">{{ settings.page_title }}</h3>
+                        <h6 class="text-xs leading-tight">{{ settings.page_subtitle }}</h6>
                     </div>
                 </Link>
             </div>
@@ -60,9 +60,10 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline';
 const openNav = ref(false);
 const pathname = ref('');
 const navigation = computed(() => usePage().props.value.navigation);
+const settings = computed(() => usePage().props.value.settings);
 
 onMounted(() => {
-    // console.log(navigation.value)
+    console.log(settings.value)
     // console.log(window.location.pathname.substring(1))
     pathname.value = window.location.pathname.substring(1) ? window.location.pathname.substring(1) : '/';
 })
