@@ -10,10 +10,9 @@
                 </button>
             </div>
 
-            <!-- Logo-->
             <div class="flex items-center justify-end">
                 <Link :href="route('home')" class="flex items-center justify-end sm:justify-start h-10">
-                    <img class="order-2 lg:order-1 h-full w-auto mt-1 hidden sm:block" src="/assets/img/logo.png" alt="Logo">
+                    <img class="logo order-2 lg:order-1 h-full w-auto mt-1 hidden" src="/assets/img/logo.png" alt="Logo">
                     <div class="order-1 lg:order-2 mr-2 lg:mr-0 lg:ml-2 text-right sm:text-left">
                         <h3 class="text-xl font-bold">{{ settings.page_title }}</h3>
                         <h6 class="text-xs leading-tight">{{ settings.page_subtitle }}</h6>
@@ -26,7 +25,22 @@
                 <div class="flex items-center justify-between space-x-2 h-full tracking-tight">
 
                     <template v-for="menuItem in navigation" :key="menuItem.id">
-                        <Link :href="menuItem.route" :class="pathname === menuItem.route ? 'border-red-600' : 'border-transparent'" class="inline-block font-bold text-gray-700 uppercase border-b-2 hover:border-red-600 hover:text-gray-800 px-2 py-1 text-sm" aria-current="page">{{ menuItem.name }}</Link>
+                        <Link v-if="!menuItem.categories.length" :href="menuItem.route" :class="pathname === menuItem.route ? 'border-red-600' : 'border-transparent'" class="inline-block font-bold text-gray-700 uppercase border-b-2 hover:border-red-600 hover:text-gray-800 px-2 py-1 text-sm transition duration-50 ease-in-out" aria-current="page">{{ menuItem.name }}</Link>
+
+                        <MenuDropdown v-else align="center" width="52">
+                            <template #trigger>
+                                <button
+                                    :class="pathname === menuItem.route ? 'border-red-600' : 'border-transparent'"
+                                    class="inline-block font-bold text-gray-700 uppercase border-b-2 hover:border-red-600 hover:text-gray-800 px-2 py-1 text-sm">{{menuItem['name']}}</button>
+                            </template>
+                            <template #content>
+                                <MenuDropdownLink
+                                    v-for="item in menuItem.categories"
+                                    :href="route(menuItem.route) + '/' + item.url" as="button">
+                                    {{item['name']}}
+                                </MenuDropdownLink>
+                            </template>
+                        </MenuDropdown>
                     </template>
 
                 </div>
@@ -40,6 +54,17 @@
 
                 <template v-for="menuItem in navigation" :key="menuItem.id">
                     <Link :href="menuItem.route" :class="pathname === menuItem.route ? 'text-red-700' : 'text-gray-700'" class="block font-bold uppercase hover:bg-gray-200 hover:text-gray-800 px-3 py-2 text-sm font-medium" aria-current="page">{{ menuItem.name }}</Link>
+
+                    <template v-if="menuItem.categories.length">
+                        <MenuDropdownLink
+                            v-for="item in menuItem.categories"
+                            :href="route(menuItem.route) + '/' + item.url"
+                            as="button"
+                            :mobile="true"
+                        >
+                            {{item['name']}}
+                        </MenuDropdownLink>
+                    </template>
                 </template>
 
             </div>
@@ -63,7 +88,7 @@ const navigation = computed(() => usePage().props.value.navigation);
 const settings = computed(() => usePage().props.value.settings);
 
 onMounted(() => {
-    console.log(settings.value)
+    console.log(navigation.value)
     // console.log(window.location.pathname.substring(1))
     pathname.value = window.location.pathname.substring(1) ? window.location.pathname.substring(1) : '/';
 })
@@ -71,6 +96,10 @@ onMounted(() => {
 </script>
 
 <style scoped>
-
+@media(min-width: 370px) {
+    .logo {
+        display: block;
+        }
+}
 </style>
 

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Navigation extends Model
+class Category extends Model
 {
     use HasFactory;
 
@@ -15,18 +15,21 @@ class Navigation extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'page_id',
+        'navigation_id',
+        'is_dynamic',
         'name',
-        'route',
+        'url',
         'position',
     ];
 
-    public function page()
+    public function navigation()
     {
-        return $this->belongsTo(Page::class);
+        return $this->belongsTo(Navigation::class, 'navigation_id', 'id');
     }
 
-    public function categories()
+    public function page()
     {
-        return $this->hasMany(Category::class)->orderBy('position');
+        return $this->belongsTo(Page::class, 'page_id', 'id');
     }
 }

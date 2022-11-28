@@ -18,6 +18,7 @@ use Inertia\Inertia;
 Route::get('/', [App\Http\Controllers\UI\PagesController::class, 'index'])->name('home');
 Route::get('/where-am-i', [App\Http\Controllers\UI\PagesController::class, 'contact'])->name('contact');
 Route::get('/get-in-touch', [App\Http\Controllers\UI\PagesController::class, 'getInTouch'])->name('getInTouch');
+Route::get('/about/{page?}', [App\Http\Controllers\UI\PagesController::class, 'about'])->name('about');
 
 //Route::get('/dashboard', function () {
 //    return Inertia::render('Dashboard');

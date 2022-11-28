@@ -55,6 +55,6 @@ class HandleInertiaRequests extends Middleware
     }
 
     private function getNavigationItems() {
-        return Navigation::orderBy('position')->get();
+        return Navigation::with('categories')->orderBy('position')->get();
     }
 }
