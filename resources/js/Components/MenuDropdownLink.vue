@@ -18,7 +18,7 @@ const mobileClasses = computed(() => {
 </script>
 
 <template>
-    <Link class="block w-full px-4 leading-5 font-bold focus:outline-none focus:bg-red-100 transition duration-150 ease-in-out" :class="mobileClasses">
+    <Link class="block w-full px-4 leading-5 font-bold focus:outline-none transition duration-150 ease-in-out" :class="mobileClasses">
         <span class="text-gray-700 border-b-2 border-transparent hover:border-red-600 transition duration-50 ease-in-out">
             <slot />
         </span>

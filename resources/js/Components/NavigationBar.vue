@@ -25,7 +25,7 @@
                 <div class="flex items-center justify-between space-x-2 h-full tracking-tight">
 
                     <template v-for="menuItem in navigation" :key="menuItem.id">
-                        <Link v-if="!menuItem.categories.length" :href="menuItem.route" :class="pathname === menuItem.route ? 'border-red-600' : 'border-transparent'" class="inline-block font-bold text-gray-700 uppercase border-b-2 hover:border-red-600 hover:text-gray-800 px-2 py-1 text-sm transition duration-50 ease-in-out" aria-current="page">{{ menuItem.name }}</Link>
+                        <Link v-if="!menuItem.categories.length" :href="menuItem.route === '/' ? menuItem.route : '/' + menuItem.route" :class="pathname === menuItem.route ? 'border-red-600' : 'border-transparent'" class="inline-block font-bold text-gray-700 uppercase border-b-2 hover:border-red-600 hover:text-gray-800 px-2 py-1 text-sm transition duration-50 ease-in-out" aria-current="page">{{ menuItem.name }}</Link>
 
                         <MenuDropdown v-else align="center" width="52">
                             <template #trigger>
