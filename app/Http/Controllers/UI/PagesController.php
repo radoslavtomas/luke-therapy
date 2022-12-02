@@ -55,7 +55,7 @@ class PagesController extends Controller
         ]);
     }
 
-    public function about($page)
+    public function practice($page)
     {
         $page = Category::with('page')->where('url', $page)->firstOrFail();
 

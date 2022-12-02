@@ -18,6 +18,7 @@ class Navigation extends Model
         'name',
         'route',
         'position',
+        'page_id'
     ];
 
     public function page()

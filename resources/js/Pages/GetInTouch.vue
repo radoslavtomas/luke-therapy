@@ -1,8 +1,8 @@
 <template>
     <main-layout>
         <Head :title="page.title" />
-        <section class="mb-4">
-            <h1 class="text-2xl font-bold">{{ page.page_title }}</h1>
+        <section class="my-8">
+            <h1 class="text-2xl font-bold uppercase text-center">{{ page.name }}</h1>
         </section>
         <section class="max-w-xl mx-auto">
             <ContactForm />

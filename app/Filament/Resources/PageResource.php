@@ -6,6 +6,7 @@ use App\Filament\Resources\PageResource\Pages;
 use App\Filament\Resources\PageResource\RelationManagers;
 use App\Models\Page;
 use Filament\Forms;
+use Filament\Forms\Components\RichEditor;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
@@ -29,7 +30,7 @@ class PageResource extends Resource
                 Forms\Components\TextInput::make('title')
                     ->required(),
                 Forms\Components\Grid::make()->schema([
-                    TiptapEditor::make('body')
+                    RichEditor::make('body')
                         ->required()
                 ])->columns(1),
             ]);

@@ -1,10 +1,10 @@
 <template>
     <main-layout>
         <Head :title="page.title" />
-        <section class="mb-4">
-            <h1 class="text-2xl font-bold">{{ page.name }}</h1>
+        <section class="my-8">
+            <h1 class="text-2xl font-bold uppercase text-center">{{ page.name }}</h1>
         </section>
-        <section v-html="page.body"></section>
+        <section class="content max-w-3xl mx-auto" v-html="page.body"></section>
     </main-layout>
 </template>
 

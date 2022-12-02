@@ -1,8 +1,8 @@
 <template>
-    <form action="" class="my-4" @submit.prevent="handleForm">
+    <form ref="contactForm" method="POST" action="https://formspree.io/f/xbjbvwey" class="my-4" @submit.prevent="handleForm">
         <label class="block mb-4">
             <span class="text-gray-700">Name</span>
-            <input type="text" v-model="form.name"
+            <input type="text" name="name" required v-model="form.name"
                    class="
                     mt-1
                     block
@@ -20,7 +20,7 @@
 
         <label class="block mb-4">
             <span class="text-gray-700">Preferred way for Luke to make first contact</span>
-            <select v-model="form.contact_method" class="
+            <select name="contact_method" required v-model="form.contact_method" class="
                     block
                     w-full
                     mt-1
@@ -41,7 +41,7 @@
 
         <label class="block mb-4" v-if="form.contact_method === 'phone'">
             <span class="text-gray-700">Please give a couple of days / times that would be convenient to call you back</span>
-            <textarea v-model="form.phone_times" class="
+            <textarea name="phone_times" v-model="form.phone_times" class="
                     mt-1
                     block
                     w-full
@@ -57,7 +57,7 @@
 
         <label class="block mb-4">
             <span class="text-gray-700">Email</span>
-            <input type="email" v-model="form.email" class="
+            <input name="email" required type="email" v-model="form.email" class="
                     mt-1
                     block
                     w-full
@@ -73,7 +73,7 @@
 
         <label class="block mb-4">
             <span class="text-gray-700">Contact number</span>
-            <input type="text" v-model="form.phone" class="
+            <input name="phone" type="text" v-model="form.phone" class="
                     mt-1
                     block
                     w-full
@@ -89,7 +89,7 @@
 
         <label class="block mb-4">
             <span class="text-gray-700">Reason for message</span>
-            <select v-model="form.reason" class="
+            <select name="reason" required v-model="form.reason" class="
                     block
                     w-full
                     mt-1
@@ -112,7 +112,7 @@
         <label class="block mb-4" v-if="form.reason === 'therapy'">
                 <span class="text-gray-700">If you are requesting for therapy please give a light description of needs
 </span>
-            <textarea v-model="form.therapy_needs" class="
+            <textarea name="therapy_needs" v-model="form.therapy_needs" class="
                     mt-1
                     block
                     w-full
@@ -129,7 +129,7 @@
 
         <label class="block mb-4">
             <span class="text-gray-700">Comment or Message</span>
-            <textarea v-model="form.comment" class="
+            <textarea name="comment" v-model="form.comment" class="
                     mt-1
                     block
                     w-full
@@ -143,6 +143,10 @@
             </span>
         </label>
 
+        <div v-show="false">
+            <input type="text" name="spree" v-model="form.spree">
+        </div>
+
         <button type="submit" class="rounded text-white text-center px-4 py-3 mb-3 sm:mb-0 w-full sm:w-auto shadow-md bg-green-400 hover:bg-green-500">
             Submit <ArrowRightCircleIcon class="w-5 h-5 inline" />
         </button>
@@ -150,7 +154,7 @@
 </template>
 
 <script setup>
-import {computed, reactive} from "vue";
+import {computed, reactive, ref} from "vue";
 import {usePage} from "@inertiajs/inertia-vue3";
 import {ArrowRightCircleIcon} from '@heroicons/vue/24/outline';
 import { required, email, numeric, minLength, maxLength, requiredIf } from '@vuelidate/validators'
@@ -158,7 +162,7 @@ import useVuelidate from '@vuelidate/core'
 
 const settings = computed(() => usePage().props.value.settings);
 
-
+const contactForm = ref(null);
 let form = reactive({
     name: '',
     contact_method: '',
@@ -168,6 +172,7 @@ let form = reactive({
     reason: '',
     therapy_needs: '',
     comment: '',
+    spree: ''
 })
 
 const rules = computed(() => {
@@ -186,10 +191,13 @@ const rules = computed(() => {
 const v$ = useVuelidate(rules, form);
 
 const handleForm = async () => {
+    if(form.spree) return;
+
     const result = await v$.value.$validate();
 
     console.log(result)
     console.log(form)
+    console.log(contactForm.value)
 
     if(!result) {
         const el = document.getElementsByClassName('focus:border-red-300')[0]
@@ -199,7 +207,7 @@ const handleForm = async () => {
         return;
     }
 
-    return '';
+    contactForm.value.submit();
 }
 </script>
 

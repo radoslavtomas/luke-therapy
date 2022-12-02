@@ -51,6 +51,7 @@ class NavigationResource extends Resource
                 Tables\Columns\TextColumn::make('position')
                     ->sortable()
             ])
+            ->defaultSort('position')
             ->filters([
                 //
             ])
