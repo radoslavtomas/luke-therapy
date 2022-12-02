@@ -15,5 +15,4 @@ import {computed, onMounted} from "vue";
 
 const page = computed(() => usePage().props.value.page);
 
-onMounted(() => console.log(page.value))
 </script>

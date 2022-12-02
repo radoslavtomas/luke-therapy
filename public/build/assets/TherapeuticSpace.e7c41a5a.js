@@ -1,0 +1,1 @@
+import{o as e,c as a,w as t,a as c,u as s,H as r,b as o}from"./app.9f201288.js";import{_ as p}from"./MainLayout.d206ae1f.js";import"./_plugin-vue_export-helper.cdc0426e.js";const _=o("h1",null,"Therapeutic space",-1),h={__name:"TherapeuticSpace",setup(u){return(i,n)=>(e(),a(p,null,{default:t(()=>[c(s(r),{title:"Therapeutic space"}),_]),_:1}))}};export{h as default};

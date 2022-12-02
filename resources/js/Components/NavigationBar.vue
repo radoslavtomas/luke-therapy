@@ -53,7 +53,9 @@
             <div class="relative bg-gray-100 shadow-xl border-y border-purple-300 opacity-95 space-y-1 px-2 pt-2 pb-3 z-50">
 
                 <template v-for="menuItem in navigation" :key="menuItem.id">
-                    <Link :href="menuItem.route" :class="pathname === menuItem.route ? 'text-red-700' : 'text-gray-700'" class="block font-bold uppercase hover:bg-gray-200 hover:text-gray-800 px-3 py-2 text-sm font-medium" aria-current="page">{{ menuItem.name }}</Link>
+                    <Link v-if="!menuItem.categories.length" :href="menuItem.route === '/' ? menuItem.route : '/' + menuItem.route" :class="pathname === menuItem.route ? 'text-red-700' : 'text-gray-800'" class="block font-bold uppercase hover:bg-gray-200 hover:text-gray-900 px-3 py-2 text-sm font-medium" aria-current="page">{{ menuItem.name }}</Link>
+
+                    <div v-else class="font-bold uppercase hover:bg-gray-200 text-gray-500 px-3 py-2 text-sm font-medium" aria-current="page">{{ menuItem.name }}</div>
 
                     <template v-if="menuItem.categories.length">
                         <MenuDropdownLink
@@ -88,7 +90,7 @@ const navigation = computed(() => usePage().props.value.navigation);
 const settings = computed(() => usePage().props.value.settings);
 
 onMounted(() => {
-    console.log(navigation.value)
+    // console.log(navigation.value)
     // console.log(window.location.pathname.substring(1))
     pathname.value = window.location.pathname.substring(1) ? window.location.pathname.substring(1) : '/';
 })

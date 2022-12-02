@@ -195,10 +195,6 @@ const handleForm = async () => {
 
     const result = await v$.value.$validate();
 
-    console.log(result)
-    console.log(form)
-    console.log(contactForm.value)
-
     if(!result) {
         const el = document.getElementsByClassName('focus:border-red-300')[0]
         setTimeout(() => {

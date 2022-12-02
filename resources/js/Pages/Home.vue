@@ -34,9 +34,6 @@ import {UserIcon, PuzzlePieceIcon} from '@heroicons/vue/24/outline';
 
 const page = computed(() => usePage().props.value.page);
 const settings = computed(() => usePage().props.value.settings);
-const ziggy = computed(() => usePage().props.value.ziggy);
-
-onBeforeMount(() => console.log(ziggy.value))
 </script>
 
 <style>
