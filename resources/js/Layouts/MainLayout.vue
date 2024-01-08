@@ -12,10 +12,15 @@
     </main>
 
     <footer class="bg-gray-700 text-white mt-8 footer-shadow">
-        <div class="custom-container flex items-center sm:items-start justify-between py-5 flex-col sm:flex-row">
+        <div class="custom-container flex items-center justify-between py-12 flex-col sm:flex-row">
             <section class="mb-8 sm:mb-0 text-center sm:text-left">
                 <p class="">{{ settings.page_title }}</p>
                 <p class="text-xs">{{ settings.page_subtitle }}</p>
+            </section>
+
+            <section class="flex gap-1 mb-8 sm:mb-0 flex-col sm:flex-row h-full">
+                <img src="/assets/img/ahpp_logo.png" alt="ahpp logo" class="w-44 h-auto sm:h-16 sm:w-auto">
+                <img src="/assets/img/bacp_logo.png" alt="ahpp logo" class="w-44 h-auto sm:h-16 sm:w-auto">
             </section>
 
             <section class="text-sm text-center sm:text-right">
